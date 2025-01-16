@@ -10,7 +10,7 @@ source:
   sha256: f7f696adaf2e791acd0956cb85a7cf1c2a637e2610af4be7dbf9b5c8f775172d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -18,11 +18,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8,<3.12
+    - python {{ python_min }}
     - poetry-core >=1.0.0
     - pip
   run:
-    - python >=3.8,<3.12
+    - python >={{ python_min }},<3.12
     - zarr >=2.14.2,<3.0.0
     - ruamel.yaml >=0.17.20,<0.18.0
     - colorama >=0.4.6,<0.5.0
@@ -48,6 +48,7 @@ test:
     - hpcflow --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/hpcflow/hpcflow-new
