@@ -1,5 +1,5 @@
 {% set name = "hpcflow" %}
-{% set version = "0.2.0a50" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/hpcflow/hpcflow-new/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: f7f696adaf2e791acd0956cb85a7cf1c2a637e2610af4be7dbf9b5c8f775172d
+  sha256: 4ae698c5eb561ad49edca8a151a8e6aab1898a9a0a1ffe37c052dfc9be1bf288
 
 build:
   number: 0
